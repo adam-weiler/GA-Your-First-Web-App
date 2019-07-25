@@ -1,6 +1,9 @@
 from random import randint
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
+
+def root(request): # Redirects to http://localhost:8000/home/
+    return HttpResponseRedirect('home')
 
 def home_page(request): # http://localhost:8000/home/
     response = render(request, 'index.html')
