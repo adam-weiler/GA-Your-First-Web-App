@@ -14,9 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.http import HttpResponse
+from django.shortcuts import render
 from django.urls import path
 
 def home_page(request):
+    response = render(request, 'index.html')
     return HttpResponse('')
 
 urlpatterns = [
