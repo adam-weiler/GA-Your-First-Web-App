@@ -17,10 +17,15 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.urls import path
 
-def home_page(request):
+def home_page(request): # http://localhost:8000/home/
     response = render(request, 'index.html')
-    return HttpResponse('')
+    return HttpResponse(response)
+
+def portfolio(request): # http://localhost:8000/portfolio/
+    response = render(request, 'gallery.html')
+    return HttpResponse(response)
 
 urlpatterns = [
-    path('home/', home_page)
+    path('home/', home_page),
+    path('portfolio/', portfolio)
 ]
