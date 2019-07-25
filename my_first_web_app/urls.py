@@ -36,14 +36,21 @@ def portfolio(request): # http://localhost:8000/portfolio/
     response = render(request, 'gallery.html', context)
     return HttpResponse(response)
 
-def about_me(request): # http://localhost:8000/home/
+def about_me(request): # http://localhost:8000/about_me/
     context = {'skills':['coding', 'organization', 'photoshop'], 'interests':['reading', 'music', 'exercise']}
 
     response = render(request, 'about_me.html', context)
+    return HttpResponse(response)
+
+def favourites(request): # http://localhost:8000/favourites/
+    context = {'fav_links':['https://www.freecodecamp.org/', 'https://www.10bestdesign.com/dirtymarkup/', 'https://css-tricks.com/snippets/css/a-guide-to-flexbox/', 'https://css-tricks.com/snippets/css/complete-guide-grid/']}
+
+    response = render(request, 'favourites.html', context)
     return HttpResponse(response)
 
 urlpatterns = [
     path('home/', home_page),
     path('portfolio/', portfolio),
     path('about_me/', about_me),
+    path('favourites/', favourites),
 ]
