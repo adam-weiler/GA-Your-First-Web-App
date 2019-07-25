@@ -15,12 +15,13 @@ Including another URLconf
 """
 
 from django.urls import path
-from my_first_web_app.views import root, home_page, portfolio, about_me, favourites
+from my_first_web_app.views import root, gallery, home_page, portfolio, about_me, favourites
 
 urlpatterns = [
-    path('', root),
-    path('home/', home_page),
-    path('portfolio/', portfolio),
-    path('about_me/', about_me),
-    path('favourites/', favourites),
+    path('', root), #Redirect
+    path('gallery/', portfolio), #Redirect
+    path('home/', home_page), #Page
+    path('portfolio/', portfolio), #Page
+    path('about_me/', about_me), #Page
+    path('favourites/', favourites), #Page
 ]

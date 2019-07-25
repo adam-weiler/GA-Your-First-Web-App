@@ -5,6 +5,9 @@ from django.shortcuts import render
 def root(request): # Redirects to http://localhost:8000/home/
     return HttpResponseRedirect('home')
 
+def gallery(request): # Redirects to http://localhost:8000/home/
+    return HttpResponseRedirect('portfolio')
+
 def home_page(request): # http://localhost:8000/home/
     response = render(request, 'index.html')
     return HttpResponse(response)
