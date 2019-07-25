@@ -24,8 +24,15 @@ def home_page(request): # http://localhost:8000/home/
 
 def portfolio(request): # http://localhost:8000/portfolio/
     random_number = randint(0,100)
-    image_url = "https://picsum.photos/400/600/?image={}".format(random_number)
-    context = {'gallery_image': image_url}
+    # image_url = "https://picsum.photos/400/600/?image={}".format(random_number)
+    # context = {'gallery_image': image_url}
+
+    image_urls = []
+    for i in range(5):
+        random_number = randint(0,100)
+        image_urls.append("https://picsum.photos/400/600/?image={}".format(random_number))
+
+    context = {'gallery_images': image_urls}
     response = render(request, 'gallery.html', context)
     return HttpResponse(response)
 
