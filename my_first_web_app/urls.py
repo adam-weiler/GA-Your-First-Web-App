@@ -19,7 +19,7 @@ from my_first_web_app.views import root, gallery, home_page, portfolio, about_me
 
 urlpatterns = [
     path('', root), #Redirect
-    path('gallery/', portfolio), #Redirect
+    path('gallery/', gallery), #Redirect
     path('home/', home_page), #Page
     path('portfolio/', portfolio), #Page
     path('about_me/', about_me), #Page
